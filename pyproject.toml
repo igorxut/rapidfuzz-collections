@@ -1,0 +1,108 @@
+[build-system]
+requires = ["setuptools>=82.0.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rapidfuzz-collections"
+version = "1.0.0"
+description = "Collection facades with built-in fuzzy lookup powered by RapidFuzz"
+readme = "README.md"
+requires-python = ">=3.14"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Igor Iakovlev", email = "igorxut@gmail.com" },
+]
+dependencies = [
+    "rapidfuzz>=3.14.5",
+]
+keywords = [
+    "fuzzy-matching",
+    "rapidfuzz",
+    "collections",
+    "search",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+cdist = [
+    "numpy>=2.5.0",
+]
+dev = [
+    "build>=1.5.0",
+    "numpy>=2.5.0",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.20",
+    "twine>=6.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/igorxut/rapidfuzz-collections"
+Repository = "https://github.com/igorxut/rapidfuzz-collections"
+Issues = "https://github.com/igorxut/rapidfuzz-collections/issues"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rapidfuzz_collections = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = [
+    "--strict-config",
+    "--strict-markers",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["rapidfuzz_collections"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+src = ["src", "tests", "benchmarks"]
+extend-exclude = []
+
+[tool.ruff.lint]
+select = [
+    "B",
+    "E",
+    "F",
+    "I",
+    "PERF",
+    "UP",
+    "W",
+]
+ignore = [
+    "E501",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["benchmarks"]
+
+[tool.ruff.lint.per-file-ignores]
+"benchmarks/*.py" = ["E402"]
+"examples/*.py" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"

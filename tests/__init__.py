@@ -1,7 +1,0 @@
-
-from .test_normalization import TestNormalization
-from .test_rapidfuzz_list import TestRapidFuzzList
-from .test_rapidfuzz_tuple import TestRapidFuzzTuple
-from .test_rapidfuzz_set import TestRapidFuzzSet
-from .test_rapidfuzz_frozenset import TestRapidFuzzFrozenSet
-from .test_rapidfuzz_dict import TestRapidFuzzDict

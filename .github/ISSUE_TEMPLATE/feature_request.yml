@@ -1,0 +1,43 @@
+name: Feature request
+description: Propose a new feature or improvement
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Opening an issue does not guarantee that the feature will be implemented.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the problem you are trying to solve.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the feature or change you are proposing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why it belongs in this library
+      description: >
+        Explain why this is a good fit for rapidfuzz-collections rather than
+        user code or a separate package.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe any alternative solutions or workarounds you have tried.
+    validations:
+      required: false

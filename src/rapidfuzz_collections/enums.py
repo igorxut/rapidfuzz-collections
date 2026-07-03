@@ -1,25 +1,31 @@
-
 from enum import Enum
 
 
+class IndexStrategy(Enum):
+    """Fuzzy-index storage strategy for dict-like and set-like collections.
+
+    Attributes:
+        SEQUENCE: Store normalized choices in sequence order. This is the
+            default because benchmarks show it is the strongest general
+            read-heavy strategy.
+        KEYED: Store normalized choices keyed by each unique hashable value.
+            This can reduce build overhead and selected mutation costs for
+            unique hashable domains, especially when normalized collisions are
+            common. Mutable keyed indexes trade additional memory for an exact
+            registry that preserves canonical stored objects.
+    """
+
+    SEQUENCE = "sequence"
+    KEYED = "keyed"
+
+
 class ScorerType(Enum):
+    """Score interpretation mode for a RapidFuzz scorer.
+
+    Attributes:
+        DISTANCE: Lower score means greater similarity (e.g., Levenshtein distance).
+        SIMILARITY: Higher score means greater similarity (e.g., WRatio).
     """
-    Type of Rapidfuzz Scorer:
-        DISTANCE: lower number - more similar
-        SIMILARITY: higher number - more similar
-    Interprets the evaluation score.
-    """
+
     DISTANCE = 0
     SIMILARITY = 1
-
-
-class Strategy(Enum):
-    """
-    Strategy for returning value:
-        FIRST_FROM_BEST: return the first value from best scoring results
-        BEST_ONLY_ONE: return best value if there are no other values with same score
-        FIRST: return the first similar value (it may be not the best)
-    """
-    FIRST_FROM_BEST = 1
-    BEST_ONLY_ONE = 2
-    FIRST = 3

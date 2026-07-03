@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">rapidfuzz collections social preview</title>
+  <desc id="desc">Social preview image for rapidfuzz-collections</desc>
+  <style>
+    .brand-text {
+      font-family: "DejaVu Sans", sans-serif;
+      font-weight: 400;
+      text-anchor: middle;
+    }
+  </style>
+  <rect x="0" y="0" width="1280" height="640" fill="#FFFFFF"/>
+  <rect x="54" y="74" width="1172" height="492" rx="18" ry="18" fill="#0071C1"/>
+  <rect x="104" y="104" width="1072" height="220" fill="#FFFFFF"/>
+  <text x="640" y="214" class="brand-text" dominant-baseline="middle" fill="#0071C1" font-size="190">rapidfuzz</text>
+  <text x="640" y="466" class="brand-text" dominant-baseline="middle" fill="#FFFFFF" font-size="205">collections</text>
+</svg>
